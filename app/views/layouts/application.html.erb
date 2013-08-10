@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pygmentizer</title>
+  <title>Server-Send Pygments</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <h1>Server-Send Pygments</h1>
+</header>
 
-<%= yield %>
+<section>
+  <%= yield %>
+</section>
+
+<footer>
+  <p>Server-Send Pygments &copy; Summer 2013</p>
+</footer>
 
 </body>
 </html>

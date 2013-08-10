@@ -1,0 +1,26 @@
+<%= form_for @snippet do |f| %>
+  <div class="inline-field">
+    <div class="field">
+      <%= f.label :filename %>
+      <%= f.text_field :filename, autocomplete: 'off', spellcheck: 'off' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :language %>
+      <%= f.select :language, Snippet::LANGUAGES %>
+    </div>
+  </div>
+
+  <% if @snippet.errors.any? %>
+    <p class="errors"><%= @snippet.errors.full_messages.to_sentence.capitalize %></p>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

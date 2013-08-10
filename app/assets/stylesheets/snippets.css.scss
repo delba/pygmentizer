@@ -1,3 +1,78 @@
-// Place all the styles related to the snippets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin clearfix {
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  font: 16px/1.5em 'helvetica neue', helvetica, arial, sans-serif;
+  max-width: 600px;
+  padding: 0 1.5em;
+  margin: 0 auto;
+}
+
+header, footer {
+  text-align: center
+}
+
+header h1 {
+  font: bold italic 4em/1.25 'helvetica neue', helvetica, arial, sans-serif;
+  margin: 1.25em 0;
+}
+
+form {
+  p.errors {
+    margin: 0;
+  }
+
+  .field, p.errors, .actions {
+    margin-bottom: 1em;
+  }
+}
+
+.inline-field {
+  @include clearfix;
+  .field {
+    float: left;
+    &:first-of-type {
+      margin-right: 1.5em;
+    }
+  }
+}
+
+label {
+  display: block;
+  &:after {
+    content: ':';
+  }
+}
+
+textarea {
+  width: 100%;
+}
+
+article p {
+  margin-bottom: 0;
+}
+
+input, textarea, select {
+  font: inherit;
+}
+
+#snippet_content, pre {
+  font: inherit;
+  font-family: menlo;
+}
+
+#snippet_content {
+  height: 7.5em;
+}
