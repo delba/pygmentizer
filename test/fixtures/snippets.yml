@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  filename: MyString
+  content: MyText
+  language: MyString
+  pygment: MyText
+
+two:
+  filename: MyString
+  content: MyText
+  language: MyString
+  pygment: MyText
