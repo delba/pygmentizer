@@ -6,6 +6,7 @@ class SnippetsController < ApplicationController
 
   def create
     @snippet = Snippet.create(snippet_params)
+    render @snippet
   end
 
   def lexers
