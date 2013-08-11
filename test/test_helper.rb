@@ -3,6 +3,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/pride'
 require 'capybara/rails'
+require 'capybara/poltergeist'
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
@@ -18,6 +19,7 @@ end
 
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
+  Capybara.javascript_driver = :poltergeist
 end
 
 class ActiveRecord::Base
