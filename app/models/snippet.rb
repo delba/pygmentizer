@@ -3,6 +3,8 @@ class Snippet < ActiveRecord::Base
 
   validates :filename, :language, :content, presence: true
 
+  validates :language, inclusion: { in: LANGUAGES }
+
   before_save :set_pygment
 
   default_scope { order(created_at: :desc) }
