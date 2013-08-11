@@ -5,7 +5,7 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    @snippet = Snippet.create(snippet_params)
+    @snippet = Snippet.create!(snippet_params)
     render @snippet
   end
 
