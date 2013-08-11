@@ -1,0 +1,9 @@
+$('p.errors').remove();
+
+<% if @snippet.persisted? %>
+  $(new_snippet).siblings('section').prepend('<%= j render @snippet %>');
+  new_snippet.reset()
+<% else %>
+  var $errors = $('<p class="errors">').text("<%= @snippet.errors.full_messages.to_sentence.capitalize.html_safe %>");
+  $(new_snippet).find('.inline-field').after($errors);
+<% end %>

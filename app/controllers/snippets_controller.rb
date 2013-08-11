@@ -5,14 +5,7 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    @snippet = Snippet.new(snippet_params)
-
-    if @snippet.save
-      redirect_to root_url
-    else
-      @snippets = Snippet.all
-      render :index
-    end
+    @snippet = Snippet.create(snippet_params)
   end
 
   def lexers
