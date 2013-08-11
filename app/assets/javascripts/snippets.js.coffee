@@ -1,3 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).on 'input', '#snippet_filename', (e) ->
+  return unless @value.match /\..+/
+
+  $.ajax
+    type: 'GET'
+    url: '/lexers'
+    data: { filename: @value }
+    success: (lexer) ->
+      return unless lexer
+      snippet_language.value = lexer.language

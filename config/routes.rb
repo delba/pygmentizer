@@ -3,4 +3,6 @@ Pygmentizer::Application.routes.draw do
 
   get  '/snippets', to: redirect('/')
   post '/snippets', to: 'snippets#create'
+
+  get '/lexers', to: 'snippets#lexers'
 end
