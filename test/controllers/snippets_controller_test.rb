@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class SnippetsControllerTest < ActionController::TestCase
+  setup do
+    @ruby   = snippets(:ruby).tap(&:save)
+    @coffee = snippets(:coffee).tap(&:save)
+  end
+
   test "get :index" do
     get :index
 

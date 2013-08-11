@@ -1,13 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  filename: MyString
-  content: MyText
-  language: MyString
-  pygment: MyText
+ruby:
+  filename: person.rb
+  content: class Person; end
+  language: Ruby
 
-two:
-  filename: MyString
-  content: MyText
-  language: MyString
-  pygment: MyText
+coffee:
+  filename: person.coffee
+  content: class Person
+  language: CoffeeScript
