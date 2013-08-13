@@ -11,6 +11,8 @@
     </div>
   </div>
 
+  <p class="errors"></p>
+
   <% if @snippet.errors.any? %>
     <p class="errors"><%= @snippet.errors.full_messages.to_sentence.capitalize %></p>
   <% end %>

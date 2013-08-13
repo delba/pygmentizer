@@ -11,8 +11,9 @@ $(document).on 'input', '#snippet_filename', (e) ->
 
 $(document).on 'submit', '#new_snippet', (e) ->
   e.preventDefault()
+  $errors = $('p.errors')
 
-  $('p.errors').remove()
+  $errors.removeClass('visible')
 
   filename = snippet_filename.value
   language = snippet_language.value
@@ -24,8 +25,7 @@ $(document).on 'submit', '#new_snippet', (e) ->
   errors.push "content can't be blank"  if content.match(/^\s*$/)
 
   unless errors.length is 0
-    $errors = $('<p class="errors">').text(errors.join(' and '))
-    $(new_snippet).find('.inline-field').after($errors)
+    $errors.text(errors.join(' and ')).addClass('visible')
     return
 
   $.ajax

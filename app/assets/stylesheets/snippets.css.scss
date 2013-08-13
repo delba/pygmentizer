@@ -60,6 +60,13 @@ textarea {
   width: 100%;
 }
 
+p.errors {
+  display: none;
+  &.visible {
+    display: block;
+  }
+}
+
 article p {
   margin-bottom: 0;
 }
