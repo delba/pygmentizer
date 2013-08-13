@@ -12,6 +12,7 @@ class Snippet < ActiveRecord::Base
 private
 
   def set_pygment
-    self.pygment = Pygments::Lexer.find_by_name(language).highlight(content)
+    lexer = Pygments::Lexer.find_by_name(language)
+    self.pygment = lexer.highlight(content)
   end
 end
