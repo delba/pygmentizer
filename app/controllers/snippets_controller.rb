@@ -6,6 +6,8 @@ class SnippetsController < ApplicationController
 
   def create
     @snippet = Snippet.create!(snippet_params)
+    Resque.enqueue(Highlighter, @snippet.id)
+
     render @snippet
   end
 
