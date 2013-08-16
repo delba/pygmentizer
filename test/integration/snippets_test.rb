@@ -24,8 +24,10 @@ class SnippetsTest < ActionDispatch::IntegrationTest
 
     within '#new_snippet' do
       fill_in 'Filename', with: 'user.rb'
+      sleep 0.1
       assert_equal 'Ruby', find_field('Language').value
       fill_in 'Filename', with: 'user.coffee'
+      sleep 0.1
       assert_equal 'CoffeeScript', find_field('Language').value
     end
   end
@@ -35,7 +37,6 @@ class SnippetsTest < ActionDispatch::IntegrationTest
 
     within '#new_snippet' do
       fill_in 'Filename', with: 'user.rb'
-      assert_equal 'Ruby', find_field('Language').value
       fill_in 'Content', with: 'class User; end'
       click_button 'Create Snippet'
     end
