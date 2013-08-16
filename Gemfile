@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'pygments.rb'
+gem 'resque'
 
 group :test do
   gem 'capybara'
