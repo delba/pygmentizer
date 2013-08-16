@@ -1,6 +1,6 @@
-source = new EventSource('/events')
+highlight = new EventSource('/highlight')
 
-source.addEventListener 'message', (e) ->
+highlight.addEventListener 'message', (e) ->
   snippet = JSON.parse(e.data)
   $snippet = $("#snippet_#{snippet.id}")
   $snippet.find('code').html(snippet.pygment)

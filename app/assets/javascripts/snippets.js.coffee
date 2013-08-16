@@ -3,7 +3,7 @@ $(document).on 'input', '#snippet_filename', (e) ->
 
   $.ajax
     type: 'GET'
-    url: '/lexers'
+    url: '/snippets/lexers'
     data: { filename: @value }
     success: (lexer) ->
       return unless lexer

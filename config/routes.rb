@@ -1,10 +1,11 @@
 Pygmentizer::Application.routes.draw do
   root 'snippets#index'
 
-  get  '/snippets', to: redirect('/')
-  post '/snippets', to: 'snippets#create'
+  resources :snippets, only: [:create] do
+    get 'lexers', on: :collection
+  end
 
-  get '/lexers', to: 'snippets#lexers'
-
-  get '/events', to: 'events#highlight'
+  controller :events do
+    get 'highlight'
+  end
 end
