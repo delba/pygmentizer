@@ -10,6 +10,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'pygments.rb'
 gem 'resque'
+gem 'redis'
+gem 'puma'
 
 group :test do
   gem 'capybara'
