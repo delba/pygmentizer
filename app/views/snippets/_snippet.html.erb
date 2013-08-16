@@ -1,4 +1,4 @@
-<article>
+<%= content_tag_for :article, snippet do %>
   <p><strong><%= snippet.filename %></strong></p>
   <code><%= pygment_for snippet %></code>
-</article>
+<% end %>
