@@ -24,10 +24,10 @@ class SnippetsTest < ActionDispatch::IntegrationTest
 
     within '#new_snippet' do
       fill_in 'Filename', with: 'user.rb'
-      sleep 0.1
+      sleep 0.5
       assert_equal 'Ruby', find_field('Language').value
       fill_in 'Filename', with: 'user.coffee'
-      sleep 0.1
+      sleep 0.5
       assert_equal 'CoffeeScript', find_field('Language').value
     end
   end

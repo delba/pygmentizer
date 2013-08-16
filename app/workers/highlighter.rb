@@ -5,6 +5,7 @@ class Highlighter
     Snippet.find(snippet_id).instance_exec do
       lexer = Pygments::Lexer.find_by_name(language)
       update!(pygment: lexer.highlight(content))
+      $redis.publish 'highlight', to_json
     end
   end
 end
