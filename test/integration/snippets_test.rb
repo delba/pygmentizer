@@ -5,7 +5,9 @@ class SnippetsTest < ActionDispatch::IntegrationTest
     Capybara.current_driver = Capybara.javascript_driver
 
     @ruby   = snippets(:ruby).tap(&:save)
+    Highlighter.perform(@ruby.id)
     @coffee = snippets(:coffee).tap(&:save)
+    Highlighter.perform(@coffee.id)
   end
 
   teardown do
